@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Earlier() {
   return (
-    <Section id="earlier" index="04" label="Earlier Experience">
+    <Section id="earlier" index="05" label="Earlier Experience">
       <article className="entry">
         <div className="entry__head">
           <h3 className="entry__role">

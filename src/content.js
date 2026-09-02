@@ -2,23 +2,35 @@
 
 export const profile = {
   name: 'Vignesh Prabhu',
-  headline: 'GenAI Engineer · Agentic AI · LLMs · RAG · Backend Engineering',
-  hero: 'I build AI systems that actually run in production.',
+  role: 'AI/ML Engineer',
+  headline: 'Generative AI · Agentic AI · LLMs · RAG · Backend Engineering',
+  hero: 'AI/ML Engineer building AI systems that actually run in production.',
   intro:
-    'AI/ML engineer building production-grade GenAI and backend systems. I work across LLMs, agentic workflows, RAG, model evaluation, self-hosted inference, Python/FastAPI, AWS, and production AI infrastructure.',
+    "I'm Vignesh Prabhu, an AI/ML engineer based in Udupi, Karnataka. I work across LLMs, agentic workflows, RAG, model evaluation, self-hosted inference, Python/FastAPI, AWS, and production AI infrastructure.",
   location: 'Udupi, Karnataka, India',
+  portraitAlt:
+    'Vignesh Prabhu, AI/ML engineer based in Udupi, Karnataka',
 }
+
+// Prose for the About section. Every geographic and factual claim here is
+// confirmed: based in Udupi, onsite in the Udupi–Manipal area, open to roles
+// in Bengaluru and Mangaluru and to remote work across India.
+export const about = [
+  "I'm an AI/ML engineer based in Udupi, Karnataka, working onsite in the Udupi–Manipal area as a Member of Technical Staff at Manipal Dot Net. I build generative AI systems that run in production rather than in notebooks.",
+  'My work sits between machine learning and backend infrastructure: fine-tuning and evaluating domain-specific large language models, designing agentic workflows with deterministic state management, building RAG and semantic retrieval pipelines over multimodal data, and serving models on self-hosted GPUs instead of paying per token. The services around them are Python and FastAPI on AWS.',
+  'I studied computer science and engineering at Shri Madhwa Vadiraja Institute of Technology and Management. I am open to AI and machine learning roles in Bengaluru and Mangaluru, and to remote work with engineering teams across India.',
+]
 
 export const links = {
   email: 'dev.vigneshprabhu@gmail.com',
   github: { label: 'GitHub', href: 'https://github.com/vignesh05p' },
-  linkedin: { label: 'LinkedIn', href: 'https://linkedin.com/in/vigneshprabhu11' },
+  linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/vigneshprabhu11' },
   x: { label: 'X (Twitter)', href: 'https://x.com/prabhu_ai' },
 }
 
 export const nav = [
   { id: 'about', label: 'About' },
-  { id: 'work', label: 'Work' },
+  { id: 'work', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ]

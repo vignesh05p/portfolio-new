@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Work() {
   return (
-    <Section id="work" index="01" label="Selected Work">
+    <Section id="work" index="02" label="Experience">
       <article className="entry">
         <div className="entry__head">
           <h3 className="entry__role">

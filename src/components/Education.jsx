@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Education() {
   return (
-    <Section id="education" index="05" label="Education & Achievements">
+    <Section id="education" index="06" label="Education & Achievements">
       <div className="facts">
         <div>
           <h3 className="fact__title">{education.degree}</h3>

@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Contact() {
   return (
-    <Section id="contact" index="06" label="Contact">
+    <Section id="contact" index="07" label="Contact">
       <h3 className="contact__statement">
         Interested in building serious AI systems?
       </h3>
@@ -22,8 +22,8 @@ export default function Contact() {
           <a
             className="link"
             href={links.github.href}
+            rel="me noreferrer"
             target="_blank"
-            rel="noreferrer"
           >
             {links.github.label}
           </a>
@@ -32,8 +32,8 @@ export default function Contact() {
           <a
             className="link"
             href={links.linkedin.href}
+            rel="me noreferrer"
             target="_blank"
-            rel="noreferrer"
           >
             {links.linkedin.label}
           </a>
@@ -42,8 +42,8 @@ export default function Contact() {
           <a
             className="link"
             href={links.x.href}
+            rel="me noreferrer"
             target="_blank"
-            rel="noreferrer"
           >
             {links.x.label}
           </a>

@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Stack() {
   return (
-    <Section id="stack" index="03" label="Technical Stack">
+    <Section id="stack" index="04" label="Technical Skills">
       <div className="stack">
         {stack.map((row) => (
           <div className="stack__row" key={row.group}>

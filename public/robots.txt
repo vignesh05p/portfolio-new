@@ -1,0 +1,5 @@
+# https://vignesh-prabhu.vercel.app/
+User-agent: *
+Allow: /
+
+Sitemap: https://vignesh-prabhu.vercel.app/sitemap.xml

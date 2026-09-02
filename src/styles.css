@@ -208,11 +208,11 @@ main:focus {
 }
 
 .hero__title {
-  font-size: clamp(2.4rem, 7.4vw, 5rem);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.05rem, 5vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.032em;
   font-weight: 500;
-  max-width: 16ch;
+  max-width: 24ch;
   text-wrap: balance;
 }
 
@@ -236,6 +236,51 @@ main:focus {
 
 .hero__meta .sep {
   color: var(--line);
+}
+
+/* Hero row: copy on the left, portrait on the right, stacking on narrow
+   viewports. Replaces inline style props so the CSP needs no 'unsafe-inline'. */
+.hero__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.hero__text {
+  flex: 1 1 460px;
+  min-width: 0;
+}
+
+.hero__portrait {
+  flex: 0 0 auto;
+}
+
+/* width/height attributes on the img supply the intrinsic ratio, so the
+   reserved box is correct before the file arrives — no layout shift. */
+.hero__portrait img {
+  display: block;
+  width: clamp(180px, 21vw, 272px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- About ----------------------------------------------------- */
+
+.about {
+  max-width: var(--measure);
+}
+
+.about p + p {
+  margin-top: 1.15em;
+  color: var(--muted);
+}
+
+.about__lead {
+  font-size: clamp(1.0625rem, 1.7vw, 1.1875rem);
 }
 
 /* --- Inline link treatment ------------------------------------ */
@@ -522,6 +567,28 @@ main:focus {
   color: var(--faint);
 }
 
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+/* --- Copy deterrence ------------------------------------------- */
+
+/* Casual selection is suppressed, but anything a visitor legitimately needs to
+   copy — email, profile URLs — stays selectable, and focus/keyboard nav is
+   untouched. This is friction, not protection. */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+a,
+[data-selectable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 /* --- Responsive ------------------------------------------------ */
 
 @media (max-width: 860px) {
@@ -560,6 +627,21 @@ main:focus {
 
   .hero__title {
     max-width: none;
+  }
+
+  .hero__layout {
+    gap: 32px;
+  }
+
+  /* On phones the portrait becomes a compact avatar above the eyebrow, so the
+     H1 still lands near the top of the viewport. */
+  .hero__portrait {
+    order: -1;
+    align-self: flex-start;
+  }
+
+  .hero__portrait img {
+    width: clamp(88px, 24vw, 112px);
   }
 
   /* Location on its own line, links on the next. */

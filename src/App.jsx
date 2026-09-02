@@ -1,5 +1,6 @@
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
+import About from './components/About.jsx'
 import Work from './components/Work.jsx'
 import Project from './components/Project.jsx'
 import Stack from './components/Stack.jsx'
@@ -17,6 +18,7 @@ export default function App() {
       <Nav />
       <main id="main" tabIndex={-1}>
         <Hero />
+        <About />
         <Work />
         <Project />
         <Stack />

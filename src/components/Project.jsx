@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Project() {
   return (
-    <Section id="projects" index="02" label="Featured Project" tint>
+    <Section id="projects" index="03" label="Featured Project" tint>
       <article>
         <h3 className="project__title">{featured.name}</h3>
         <p className="project__subtitle">{featured.subtitle}</p>
