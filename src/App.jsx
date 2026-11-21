@@ -6,6 +6,7 @@ import Project from './components/Project.jsx'
 import Stack from './components/Stack.jsx'
 import Earlier from './components/Earlier.jsx'
 import Education from './components/Education.jsx'
+import Beyond from './components/Beyond.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -24,6 +25,7 @@ export default function App() {
         <Stack />
         <Earlier />
         <Education />
+        <Beyond />
         <Contact />
       </main>
       <Footer />

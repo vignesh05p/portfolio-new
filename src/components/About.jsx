@@ -1,26 +1,36 @@
 import { about } from '../content.js'
+import IntroVideo from './IntroVideo.jsx'
 import Section from './Section.jsx'
 
 export default function About() {
   return (
     <Section id="about" index="01" label="About">
       <div className="about">
-        <p className="about__lead">{about[0]}</p>
+        <p className="about__lead">{about.lead}</p>
         <p>
-          {about[1]}{' '}
+          {about.work}{' '}
           <a className="link" href="#work">
-            More on my AI engineering work at Manipal Dot Net
+            More on my work at Manipal Dot Net
           </a>
           .
         </p>
         <p>
-          {about[2]}{' '}
+          {about.life}{' '}
+          <a className="link" href="#beyond">
+            Life off the clock
+          </a>
+          .
+        </p>
+        <p>
+          {about.education}{' '}
           <a className="link" href="#projects">
-            See my projects, AstraTrade AI and the Video Down Telegram bot
+            See my projects
           </a>
           .
         </p>
       </div>
+
+      <IntroVideo />
     </Section>
   )
 }
