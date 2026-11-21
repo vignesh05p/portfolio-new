@@ -61,7 +61,8 @@ vercel.json              security headers + cache policy
   location. Do not add city names that are not true — there are no
   per-city landing pages by design.
 - **JSON-LD** is one `@graph`: `ProfilePage` → `Person` (+ `WebSite`,
-  `ImageObject`, and a `CreativeWork` for AstraTrade AI). Validate changes with
+  `ImageObject`, a `CreativeWork` for AstraTrade AI and a
+  `SoftwareSourceCode` for Video Down). Validate changes with
   the Rich Results Test; keep it valid JSON.
 - `sitemap.xml` has a hand-written `<lastmod>`. Update it when you make
   substantive content changes.

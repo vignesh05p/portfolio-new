@@ -367,7 +367,22 @@ main:focus {
   color: var(--faint);
 }
 
-/* --- Featured project ----------------------------------------- */
+/* --- Projects ------------------------------------------------- */
+
+.project {
+  scroll-margin-top: 96px;
+}
+
+.project + .project {
+  margin-top: clamp(64px, 9vw, 112px);
+  padding-top: clamp(48px, 7vw, 80px);
+  border-top: 1px solid var(--line);
+}
+
+.project__source {
+  margin-top: 24px;
+  font-size: 15px;
+}
 
 .project__title {
   font-size: clamp(2rem, 5.4vw, 3.4rem);

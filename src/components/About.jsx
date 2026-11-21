@@ -16,7 +16,7 @@ export default function About() {
         <p>
           {about[2]}{' '}
           <a className="link" href="#projects">
-            See AstraTrade AI, my quantitative research platform
+            See my projects, AstraTrade AI and the Video Down Telegram bot
           </a>
           .
         </p>
