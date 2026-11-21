@@ -48,16 +48,28 @@ export default function Project() {
             </ul>
           )}
 
-          {project.source && (
-            <p className="project__source">
-              <a
-                className="link"
-                href={project.source}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View the source on GitHub
-              </a>
+          {(project.live || project.source) && (
+            <p className="project__links">
+              {project.live && (
+                <a
+                  className="link"
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Try it on Telegram
+                </a>
+              )}
+              {project.source && (
+                <a
+                  className="link"
+                  href={project.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View the source on GitHub
+                </a>
+              )}
             </p>
           )}
         </article>

@@ -8,7 +8,7 @@ export default function Footer() {
           © {new Date().getFullYear()} {profile.name} · {profile.location}
         </p>
         <ul className="footer__links">
-          {[links.github, links.linkedin, links.x].map((item) => (
+          {[links.github, links.linkedin, links.x, links.youtube].map((item) => (
             <li key={item.href}>
               <a
                 className="link"

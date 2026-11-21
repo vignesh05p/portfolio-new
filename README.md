@@ -36,15 +36,16 @@ src/content.js           all page copy and data — edit here, not in components
 src/styles.css           design tokens + layout (single stylesheet)
 src/App.jsx              page composition / section order
 src/client.js            the only client entry (enhancement; React only in dev)
-src/enhance.js           scroll-spy + copy deterrence, no framework
+src/enhance.js           scroll-spy, copy deterrence, click-to-play video; no framework
 src/entry-server.jsx     build-time render entry
-src/components/          Nav, Hero, About, Section, Work, Project, Stack,
-                         Earlier, Education, Contact, Footer
+src/components/          Nav, Hero, About, IntroVideo, Section, Work, Project,
+                         Stack, Earlier, Education, Beyond, Contact, Footer
 scripts/prerender.mjs    markup injection + font preload
 scripts/generate-images.py  regenerates every image in public/ from assets-src/
 public/                  robots.txt, sitemap.xml, favicons, og-image, portrait
 assets-src/              original full-size portrait and icon (not served)
-vercel.json              security headers + cache policy
+vercel.json              security headers (CSP allows i.ytimg.com images and
+                         youtube-nocookie.com frames for the intro video) + cache policy
 ```
 
 `Section.jsx` is the shared editorial wrapper: a left rail holding the numbered
@@ -61,12 +62,12 @@ vercel.json              security headers + cache policy
   location. Do not add city names that are not true — there are no
   per-city landing pages by design.
 - **JSON-LD** is one `@graph`: `ProfilePage` → `Person` (+ `WebSite`,
-  `ImageObject`, a `CreativeWork` for AstraTrade AI and a
-  `SoftwareSourceCode` for Video Down). Validate changes with
+  `ImageObject`, a `CreativeWork` for AstraTrade AI, a
+  `SoftwareSourceCode` for Video Down and a `VideoObject` for the intro video). Validate changes with
   the Rich Results Test; keep it valid JSON.
 - `sitemap.xml` has a hand-written `<lastmod>`. Update it when you make
   substantive content changes.
-- The three profile links (GitHub, LinkedIn, X) carry `rel="me"` and match
+- The four profile links (GitHub, LinkedIn, X, YouTube) carry `rel="me"` and match
   `sameAs` exactly. Keep those URLs identical in both places.
 
 ## Other notes

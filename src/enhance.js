@@ -1,10 +1,37 @@
 // Progressive enhancement for the prerendered page. No framework, no state:
-// the markup is already complete, this only layers on the two behaviours that
+// the markup is already complete, this only layers on the behaviours that
 // genuinely need script.
 
 export function enhance() {
   markActiveSection()
   deterCasualCopying()
+  clickToPlayVideos()
+}
+
+/**
+ * Swaps a video thumbnail link for the YouTube player on click, so nothing
+ * from YouTube runs until a visitor asks for it. Modified clicks (new tab,
+ * etc.) fall through to the plain link.
+ */
+function clickToPlayVideos() {
+  for (const link of document.querySelectorAll('a[data-video-id]')) {
+    link.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+      event.preventDefault()
+
+      const id = encodeURIComponent(link.dataset.videoId)
+      const iframe = document.createElement('iframe')
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`
+      iframe.title = link.dataset.videoTitle || 'YouTube video'
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'
+      iframe.allowFullscreen = true
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin'
+      iframe.className = 'video__frame'
+
+      link.replaceWith(iframe)
+      iframe.focus()
+    })
+  }
 }
 
 /** Marks the nav link for whichever section is in the reading band. */

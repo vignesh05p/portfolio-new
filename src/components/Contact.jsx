@@ -3,7 +3,7 @@ import Section from './Section.jsx'
 
 export default function Contact() {
   return (
-    <Section id="contact" index="07" label="Contact">
+    <Section id="contact" index="08" label="Contact">
       <h3 className="contact__statement">
         Interested in building serious AI systems?
       </h3>
@@ -46,6 +46,16 @@ export default function Contact() {
             target="_blank"
           >
             {links.x.label}
+          </a>
+        </li>
+        <li>
+          <a
+            className="link"
+            href={links.youtube.href}
+            rel="me noreferrer"
+            target="_blank"
+          >
+            {links.youtube.label}
           </a>
         </li>
       </ul>

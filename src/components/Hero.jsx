@@ -42,6 +42,14 @@ export default function Hero() {
             >
               {links.x.label}
             </a>
+            <a
+              className="link"
+              href={links.youtube.href}
+              rel="me noreferrer"
+              target="_blank"
+            >
+              {links.youtube.label}
+            </a>
             <a className="link" href={`mailto:${links.email}`}>
               Email
             </a>
