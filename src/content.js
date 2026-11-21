@@ -59,25 +59,52 @@ export const currentRole = {
   ],
 }
 
-export const featured = {
-  name: 'AstraTrade AI',
-  subtitle: 'Quantitative Intraday Research Platform',
-  description:
-    'A local-first quantitative research platform for NSE/BSE equities, combining real-time market-data ingestion, durable storage, feature engineering, deterministic decisioning and LLM-based advisory analysis.',
-  stats: [
-    { value: '~37,000', unit: 'snapshots/sec', label: 'Level-2 depth ingest' },
-    { value: '33', unit: 'instruments', label: 'Recorded concurrently' },
-    { value: '12', unit: 'features', label: 'Intraday signal layer' },
-  ],
-  details: [
-    'Level-2 market-depth recorder sustaining roughly 37,000 snapshots/sec across 33 instruments.',
-    'Crash-safe Parquet persistence with integrity verification.',
-    'PostgreSQL point-in-time feature store that prevents look-ahead bias.',
-    'Expected-value decision engine constrained by transaction costs and slippage.',
-    'LangGraph advisory layer deliberately restricted to evidence summarization and contradiction analysis.',
-    'Triple-barrier labeling, purged cross-validation, embargo periods and backtest-overfitting controls.',
-  ],
-}
+// Projects, in display order. The first one is the flagship.
+export const projects = [
+  {
+    id: 'astratrade-ai',
+    name: 'AstraTrade AI',
+    subtitle: 'Quantitative Intraday Research Platform',
+    description:
+      'A local-first quantitative research platform for NSE/BSE equities, combining real-time market-data ingestion, durable storage, feature engineering, deterministic decisioning and LLM-based advisory analysis.',
+    stats: [
+      { value: '~37,000', unit: 'snapshots/sec', label: 'Level-2 depth ingest' },
+      { value: '33', unit: 'instruments', label: 'Recorded concurrently' },
+      { value: '12', unit: 'features', label: 'Intraday signal layer' },
+    ],
+    details: [
+      'Level-2 market-depth recorder sustaining roughly 37,000 snapshots/sec across 33 instruments.',
+      'Crash-safe Parquet persistence with integrity verification.',
+      'PostgreSQL point-in-time feature store that prevents look-ahead bias.',
+      'Expected-value decision engine constrained by transaction costs and slippage.',
+      'LangGraph advisory layer deliberately restricted to evidence summarization and contradiction analysis.',
+      'Triple-barrier labeling, purged cross-validation, embargo periods and backtest-overfitting controls.',
+    ],
+  },
+  {
+    id: 'video-down',
+    name: 'Video Down',
+    subtitle: 'Telegram Bot for Saving Videos as MP4 & MP3',
+    description:
+      'A Telegram bot that turns a video link from X, YouTube, Pinterest, Facebook, Reddit, Vimeo, Threads and 1,000+ other sites into an MP4 or MP3 saved in your chat. Telegram stores every file in the cloud for free, so the chat becomes a personal, searchable video library.',
+    stats: [
+      { value: '1,000+', unit: 'sites', label: 'Supported through yt-dlp' },
+      { value: '~0.5', unit: 'sec', label: 'X link lookup, down from 1.7 s' },
+      { value: '90', unit: 'tests', label: 'Incl. full bot flow' },
+    ],
+    details: [
+      'Resolves each link once and reuses that lookup for every download, with yt-dlp kept warm between requests: X lookups dropped from ~1.7 s to ~0.5 s and YouTube from ~3.5 s to ~2.1 s.',
+      'Prefetches the quick MP4 (sharpest version up to 720p at about 20 MB) the moment the format menu appears, so the file is usually ready before the user taps.',
+      'Parallel ranged HTTP downloads over several connections to get past per-connection throttling (~0.26 MB/s on YouTube), with yt-dlp as the fallback; MP3 is cut locally from the MP4 with ffmpeg instead of downloading twice.',
+      'SQLite-backed Telegram file_id cache returns anything sent before instantly, for every user, plus searchable captions with hashtags, /library and /search.',
+      'Works inside Telegram\'s 50 MB bot limit: oversized formats are flagged up front and a download that turns out too big steps down a quality automatically.',
+      'Hardened as a public bot: refuses links that resolve to private or local addresses, disables generic page fetching, caps download size, rate-limits each user, and runs in a locked-down Docker sandbox (read-only, non-root, all capabilities dropped).',
+      'Per-delivery timing logs and an admin /perf view of median lookup, download, convert and upload times.',
+    ],
+    tags: ['Python', 'python-telegram-bot', 'asyncio', 'yt-dlp', 'ffmpeg', 'SQLite', 'Docker'],
+    source: 'https://github.com/vignesh05p/video-down-bot',
+  },
+]
 
 export const stack = [
   {
